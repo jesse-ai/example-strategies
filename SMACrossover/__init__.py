@@ -45,8 +45,8 @@ class SMACrossover(Strategy):
 
     def update_position(self):
         # If there exist long position, but the signal shows Death Cross, then close the position, and vice versa.
-        if self.is_long and self.should_short():
+        if self.is_long and self.fast_sma < self.slow_sma:
             self.liquidate()
     
-        if self.is_short and self.should_long():
+        if self.is_short and self.fast_sma > self.slow_sma:
             self.liquidate()
