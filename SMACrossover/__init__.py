@@ -1,28 +1,22 @@
 """
-Title: Simple Moving Average Crossover Strategy
+Simple Moving Average Crossover Strategy
 Author: FengkieJ (fengkiejunis@gmail.com)
-Description: Simple moving average crossover strategy is the ''hello world'' of algorithmic trading.
-             This strategy uses two SMAs to determine '''Golden Cross''' to signal for long position,
-             and '''Death Cross''' to signal for short position.
+Simple moving average crossover strategy is the ''hello world'' of algorithmic trading.
+This strategy uses two SMAs to determine '''Golden Cross''' to signal for long position, and '''Death Cross''' to signal for short position.
 """
 
 from jesse.strategies import Strategy
-from jesse.indicators import sma
+import jesse.indicators as ta
 from jesse import utils
 
 class SMACrossover(Strategy):
-    def prepare(self):
-        # Setup strategy parameters
-        self.vars["slow_sma_period"] = 200
-        self.vars["fast_sma_period"] = 50
-
     @property
     def slow_sma(self):
-        return sma(self.candles, self.vars["slow_sma_period"], "close")
+        return ta.sma(self.candles, 200)
 
     @property
     def fast_sma(self):
-        return sma(self.candles, self.vars["fast_sma_period"], "close")
+        return ta.sma(self.candles, 50)
 
     def should_long(self) -> bool:
         # Golden Cross (reference: https://www.investopedia.com/terms/g/goldencross.asp)
