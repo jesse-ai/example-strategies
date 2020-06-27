@@ -33,7 +33,7 @@ class TurtleRule(Strategy):
         self.last_was_profitable = False
 
     def prepare(self):
-        self.vars["unit_risk_percent"] = 0.25
+        self.vars["unit_risk_percent"] = 1
         self.vars["entry_dc_period"] = 20
         self.vars["exit_dc_period"] = 10
         self.vars["atr_period"] = 20
