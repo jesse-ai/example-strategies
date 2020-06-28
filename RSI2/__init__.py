@@ -13,7 +13,9 @@ import jesse.indicators as ta
 from jesse import utils
 
 class RSI2(Strategy):
-    def prepare(self):
+    def __init__(self):
+        super().__init__()
+
         self.vars["fast_sma_period"] = 5
         self.vars["slow_sma_period"] = 200
         self.vars["rsi_period"] = 2
