@@ -32,7 +32,7 @@ class TurtleRules(Strategy):
         self.last_opened_price = 0
         self.last_was_profitable = False
 
-    def prepare(self):
+    def before(self):
         self.vars["unit_risk_percent"] = 1
         self.vars["entry_dc_period"] = 20
         self.vars["exit_dc_period"] = 10
@@ -143,7 +143,7 @@ class TurtleRules(Strategy):
             self.liquidate()
             self.current_pyramiding_levels = 0
 
-    def on_increased_position(self):
+    def on_increased_position(self, order):
         # "In order to keep total position risk at a minimum, if additional units were added, the stops for earlier units were raised by 1⁄2 N. 
         #   This generally meant that all the stops for the entire position would be placed at 2 N from the most recently added unit." (Faith, 2003)
         if self.is_long:
@@ -157,11 +157,11 @@ class TurtleRules(Strategy):
         self.last_opened_price = self.price
         # print(f"current pyramiding levels: {self.current_pyramiding_levels}")
 
-    def on_stop_loss(self):
+    def on_stop_loss(self, order):
         # Reset tracked pyramiding levels
         self.current_pyramiding_levels = 0 
 
-    def on_take_profit(self):
+    def on_take_profit(self, order):
         self.last_was_profitable = True
 
         # Reset tracked pyramiding levels
