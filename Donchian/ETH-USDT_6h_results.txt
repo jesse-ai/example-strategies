@@ -1,0 +1,36 @@
+loading candles...
+ CANDLES              |
+----------------------+--------------------------
+ period               |     731 days (2.0 years)
+ starting-ending date | 2019-01-01 => 2021-01-01
+
+
+ exchange   | symbol   | timeframe   | strategy   | DNA
+------------+----------+-------------+------------+-------
+ Binance    | ETH-USDT | 6h          | Donchian   |
+
+
+Executing simulation...  [####################################]  100%
+Executed backtest simulation in:  36.79 seconds
+
+
+ METRICS                         |
+---------------------------------+--------------------------
+ Total Closed Trades             |                       24
+ Total Net Profit                |    33,528.8877 (335.29%)
+ Starting => Finishing Balance   |      10,000 => 43,528.89
+ Total Open Trades               |                        1
+ Open PL                         |                 5,487.64
+ Total Paid Fees                 |                  1,027.9
+ Max Drawdown                    |                  -34.14%
+ Annual Return                   |                  108.22%
+ Expectancy                      |        1,397.04 (13.97%)
+ Avg Win | Avg Loss              |      4,302.78 | 1,508.71
+ Ratio Avg Win / Avg Loss        |                     2.85
+ Percent Profitable              |                      50%
+ Longs | Shorts                  |                100% | 0%
+ Avg Holding Time                |  2 weeks, 1 day, 4 hours
+ Winning Trades Avg Holding Time | 3 weeks, 2 days, 8 hours
+ Losing Trades Avg Holding Time  |                   1 week
+ Sharpe Ratio                    |                     1.53
+ Market Change                   |                  460.23%
