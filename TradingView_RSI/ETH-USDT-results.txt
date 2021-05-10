@@ -1,0 +1,37 @@
+loading candles...
+ CANDLES              |
+----------------------+--------------------------
+ period               |    493 days (1.35 years)
+ starting-ending date | 2020-01-01 => 2021-05-08
+
+
+ exchange   | symbol   | timeframe   | strategy   | DNA
+------------+----------+-------------+------------+-------
+ Binance    | ETH-USDT | 1h          | TV_RSI     |
+
+
+Executed backtest simulation in:  45.32 seconds
+
+
+ METRICS                         |
+---------------------------------+------------------------------
+ Total Closed Trades             |                          108
+ Total Net Profit                |         1,521.2327 (152.12%)
+ Starting => Finishing Balance   |            1,000 => 2,521.23
+ Total Open Trades               |                            0
+ Open PL                         |                            0
+ Total Paid Fees                 |                       268.69
+ Max Drawdown                    |                      -31.13%
+ Annual Return                   |                       98.03%
+ Expectancy                      |                14.09 (1.41%)
+ Avg Win | Avg Loss              |               100.49 | 63.22
+ Ratio Avg Win / Avg Loss        |                         1.59
+ Percent Profitable              |                          47%
+ Longs | Shorts                  |                    100% | 0%
+ Avg Holding Time                |  2 days, 4 hours, 41 minutes
+ Winning Trades Avg Holding Time | 2 days, 21 hours, 39 minutes
+ Losing Trades Avg Holding Time  |  1 day, 13 hours, 31 minutes
+ Sharpe Ratio                    |                         1.45
+ Market Change                   |                     2596.89%
+
+
