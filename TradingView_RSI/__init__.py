@@ -13,9 +13,17 @@ from jesse import utils
 
 class TV_RSI(Strategy):
 
+    def hyperparameters(self):
+        return [
+                {'name':'rsi', 'type': int, 'min': 10, 'max':30, 'default': 5},
+                {'name':'stop_loss', 'type': float, 'min': .5, 'max': .99, 'default': .95},
+                {'name':'take_profit', 'type': float, 'min': 1.1, 'max': 1.2, 'default': 1.1},
+                {'name':'xparam', 'type':int, 'min': 60, 'max': 90, 'default': 75}
+        ]
+
     @property
     def rsi(self):
-        return ta.rsi(self.candles, 14, sequential=True)
+        return ta.rsi(self.candles, self.hp['rsi'], sequential=True)
 
 
     def should_long(self):
@@ -34,13 +42,13 @@ class TV_RSI(Strategy):
     def go_long(self):
         qty = utils.size_to_qty(self.capital, self.price, 3, fee_rate=self.fee_rate) 
         self.buy = qty, self.price
-        self.stop_loss = qty, (self.price * .95)        # Willing to lose 5%
-        self.take_profit = qty, (self.price * 1.10)     # Take profits at 10%
+        self.stop_loss = qty, (self.price * self.hp['stop_loss'])        # Willing to lose 5%
+        self.take_profit = qty, (self.price * self.hp['take_profit'])     # Take profits at 10%
 
     def go_short(self):
         pass
 
     def update_position(self):
-        if utils.crossed(self.rsi, 75, direction="below") or  utils.crossed(self.rsi, 10, direction="below"):
+        if utils.crossed(self.rsi, self.hp['xparam'], direction="below") or  utils.crossed(self.rsi, 10, direction="below"):
             self.liquidate()
 
