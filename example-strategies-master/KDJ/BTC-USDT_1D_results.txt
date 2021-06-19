@@ -1,0 +1,35 @@
+CANDLES              |
+----------------------+--------------------------
+period               |     731 days (2.0 years)
+starting-ending date | 2019-01-01 => 2021-01-01
+
+
+exchange   | symbol   | timeframe   | strategy        | DNA
+------------+----------+-------------+-----------------+-------
+Binance    | BTC-USDT | 1D          | AwesomeStrategy |
+
+
+Executing simulation...  [####################################]  100%
+Executed backtest simulation in:  29.89 seconds
+
+
+METRICS                         |
+---------------------------------+-----------------------------
+Total Closed Trades             |                         155
+Total Net Profit                |           897.7349 (89.77%)
+Starting => Finishing Balance   |           1,000 => 1,897.73
+Total Open Trades               |                           1
+Open PL                         |                        1.59
+Total Paid Fees                 |                      252.25
+Max Drawdown                    |                      -22.4%
+Annual Return                   |                      37.64%
+Expectancy                      |                5.79 (0.58%)
+Avg Win | Avg Loss              |                 34.2 | 25.3
+Ratio Avg Win / Avg Loss        |                        1.35
+Percent Profitable              |                         52%
+Longs | Shorts                  |                   100% | 0%
+Avg Holding Time                |  2 days, 9 hours, 8 minutes
+Winning Trades Avg Holding Time | 2 days, 18 hours, 4 minutes
+Losing Trades Avg Holding Time  | 1 day, 23 hours, 21 minutes
+Sharpe Ratio                    |                        1.31
+Market Change                   |                      681.2%
