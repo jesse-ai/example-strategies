@@ -5,7 +5,14 @@ Repo: https://github.com/gabrielweich/jesse-strategies
 When the MACD line crosses the signal line AND the closing price of the last candle is above 
 the 100 period EMA a long order is placed. The script has been seet up to use the built in 
 optimization, but the optimization was never completed due to lack of processing power. 
-Change the default values in the hyperparameters function to manuallu tune parameters.
+Change the default values in the hyperparameters function to manually tune parameters.
+"""
+
+"""
+author      = "Connor McDonald"
+copyright   = "Free For Use"
+version     = "1.0"
+email       = "connormcd98@gmail.com"
 """
 
 from jesse.strategies import Strategy, cached
