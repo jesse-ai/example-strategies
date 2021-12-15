@@ -1,3 +1,7 @@
+# Currently not actively maintained.
+Some strategies need to be updated and may raise exceptions. 
+PRs are appreciated. 
+
 # Example Jesse Strategies
 
 The point of this repository is to host examples of different types of strategies that you can implement with Jesse to get you started. 
