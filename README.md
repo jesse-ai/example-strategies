@@ -11,7 +11,7 @@ Provide information on symbols and timeframes they work on / were tested.
 ## Usage Guide
 Just copy the folder into your Jesse project's `strategies` directory, and select them in the backtest tab.
 
-Be aware that they are examples to show different approaches to code strategies, use different indicators and functions of Jesse.
+Be aware that these are examples to show different approaches to code strategies, use different indicators and functions of Jesse.
 
 The aim of this repository is NOT to provide ready-to-go profitable strategies, but code examples.
 
