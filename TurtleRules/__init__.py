@@ -8,11 +8,11 @@ and William Eckhardt in 1983. This version implements the system described by Cu
 
 In Turtle system theory, a complete trading system must cover several aspects, i.e.:
    - Markets - What to buy or sell
-   - Position Sizing - How much to buy or sell
-   - Entries - When to buy or sell
-   - Stops - When to get out of a losing position
-   - Exits - When to get out of a winning position
-   - Tactics - How to buy or sell
+   - Position Sizing - How much to buy or sell
+   - Entries - When to buy or sell
+   - Stops - When to get out of a losing position
+   - Exits - When to get out of a winning position
+   - Tactics - How to buy or sell
 
 This Python module attempts to implement the system on Jesse framework as described in the pdf by Curtis Faith & Perry J. Kaufman.
 
@@ -107,7 +107,7 @@ class TurtleRules(Strategy):
 
         self.buy = qty, self.price
         self.stop_loss = qty, sl
-        # print(f"enter long {qty}")
+        # self.log(f"enter long {qty}")
         self.current_pyramiding_levels += 1 # Track the pyramiding level
         self.last_opened_price = self.price # Store this value to determine when to add next pyramiding
 
@@ -117,7 +117,7 @@ class TurtleRules(Strategy):
 
         self.sell = qty, self.price
         self.stop_loss = qty, sl
-        # print(f"enter short {qty}")
+        # self.log(f"enter short {qty}")
         self.current_pyramiding_levels += 1 # Track the pyramiding level
         self.last_opened_price = self.price # Store this value to determine when to add next pyramiding
 
@@ -127,12 +127,12 @@ class TurtleRules(Strategy):
             if self.is_long and self.price > self.last_opened_price + (self.vars["pyramiding_threshold"] * self.atr):
                 qty = self.unit_qty(self.vars["unit_risk_percent"])
                 self.buy = qty, self.price
-                # print(f"atr={self.atr}, last price={self.last_opened_price}, cur price={self.price}, action: increase long position {qty}")
+                # self.log(f"atr={self.atr}, last price={self.last_opened_price}, cur price={self.price}, action: increase long position {qty}")
             
             if self.is_short and self.price < self.last_opened_price - (self.vars["pyramiding_threshold"] * self.atr):
                 qty = self.unit_qty(self.vars["unit_risk_percent"])
                 self.sell = qty, self.price
-                # print(f"atr={self.atr}, last price={self.last_opened_price}, cur price={self.price}, action: increase short position {qty}")
+                # self.log(f"atr={self.atr}, last price={self.last_opened_price}, cur price={self.price}, action: increase short position {qty}")
 
         # "Trades are exited on the fi rst occurrence of
         #     a. The stop-loss
@@ -148,14 +148,14 @@ class TurtleRules(Strategy):
         #   This generally meant that all the stops for the entire position would be placed at 2 N from the most recently added unit." (Faith, 2003)
         if self.is_long:
             self.stop_loss = abs(self.position.qty), self.price - self.vars["atr_multiplier"] * self.atr
-            # print(f"atr={self.atr}, current position sl: {self.average_stop_loss}")
+            # self.log(f"atr={self.atr}, current position sl: {self.average_stop_loss}")
         if self.is_short:
             self.stop_loss = abs(self.position.qty), self.price + self.vars["atr_multiplier"] * self.atr
-            # print(f"atr={self.atr}, current position sl: {self.average_stop_loss}")
+            # self.log(f"atr={self.atr}, current position sl: {self.average_stop_loss}")
         
         self.current_pyramiding_levels += 1
         self.last_opened_price = self.price
-        # print(f"current pyramiding levels: {self.current_pyramiding_levels}")
+        # self.log(f"current pyramiding levels: {self.current_pyramiding_levels}")
 
     def on_stop_loss(self, order):
         # Reset tracked pyramiding levels
@@ -174,7 +174,7 @@ class TurtleRules(Strategy):
 
     def S1_filter(self):
         if self.vars["system_type"] == "S1" and self.last_was_profitable:
-            # print(f"prev was profitable, do not enter trade")
+            # self.log(f"prev was profitable, do not enter trade")
             self.last_was_profitable = False
             return False
         return True
