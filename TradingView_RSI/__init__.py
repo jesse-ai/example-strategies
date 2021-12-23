@@ -11,7 +11,7 @@ from jesse.strategies import Strategy
 import jesse.indicators as ta
 from jesse import utils
 
-class TV_RSI(Strategy):
+class TradingView_RSI(Strategy):
 
     def hyperparameters(self):
         return [
