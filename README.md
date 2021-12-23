@@ -17,7 +17,7 @@ The aim of this repository is NOT to provide ready-to-go proftiable strategies, 
 
 The strategies might only work on certain timeframes / symbols. On others you might face exceptions and need to do adjustments.
 
-Possible errors can be for example: 
+Possible things that can happen for example: 
 - `Uncaught Exception: InvalidStrategy: qty cannot be 0`: This is related to precision and rounding. Different coins have different price precisions leading to necessary adjustments to the qty logic. For example it might be necessary to increase the precision of Jesse's qty utility functions. 
 - No trades: You might be using a timeframe or symbol where the signals don't work / happen.
 - "It's not profitable": That's not the aim of those strategies and besides that depends on symbol, timeframe and much more factors. 
