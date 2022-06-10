@@ -47,13 +47,13 @@ class RSI2(Strategy):
 
     def go_long(self):
         # Open long position and use entire balance to buy
-        qty = utils.size_to_qty(self.capital, self.price, fee_rate=self.fee_rate)
+        qty = utils.size_to_qty(self.balance, self.price, fee_rate=self.fee_rate)
 
         self.buy = qty, self.price
 
     def go_short(self):
         # Open short position and use entire balance to sell
-        qty = utils.size_to_qty(self.capital, self.price, fee_rate=self.fee_rate)
+        qty = utils.size_to_qty(self.balance, self.price, fee_rate=self.fee_rate)
 
         self.sell = qty, self.price
 

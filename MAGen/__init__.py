@@ -13,7 +13,7 @@ class MAGen(Strategy):
     def go_long(self):
         entry = self.price
         stop = entry - self.atr * self.hp['stop_loss_atr_rate']
-        qty = utils.risk_to_qty(self.capital, 3, entry, stop)
+        qty = utils.risk_to_qty(self.balance, 3, entry, stop)
         take_profit = entry + self.atr * self.hp['take_profit_atr_rate']
         self.buy = qty, entry
         self.stop_loss = qty, stop
@@ -22,7 +22,7 @@ class MAGen(Strategy):
     def go_short(self):
         entry = self.price
         stop = entry + self.atr * self.hp['stop_loss_atr_rate']
-        qty = utils.risk_to_qty(self.capital, 3, entry, stop)
+        qty = utils.risk_to_qty(self.balance, 3, entry, stop)
         take_profit = entry - self.atr * self.hp['take_profit_atr_rate']
         self.sell = qty, entry
         self.stop_loss = qty, stop

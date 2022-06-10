@@ -40,7 +40,7 @@ class Donchian(Strategy):
 
     def go_long(self):
         # Open long position using entire balance
-        qty = utils.size_to_qty(self.capital, self.price, fee_rate=self.fee_rate)
+        qty = utils.size_to_qty(self.balance, self.price, fee_rate=self.fee_rate)
         self.buy = qty, self.price
 
     def go_short(self):

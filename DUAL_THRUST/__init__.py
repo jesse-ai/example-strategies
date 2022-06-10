@@ -17,14 +17,14 @@ class DUAL_THRUST(Strategy):
     def go_long(self):
         entry = self.price
         stop = entry - self.atr * self.hp['stop_loss_atr_rate']
-        qty = utils.risk_to_qty(self.capital, 2, entry, stop)
+        qty = utils.risk_to_qty(self.balance, 2, entry, stop)
         self.buy = qty, entry
         self.stop_loss = qty, stop
 
     def go_short(self):
         entry = self.price
         stop = entry + self.atr * self.hp['stop_loss_atr_rate']
-        qty = utils.risk_to_qty(self.capital, 2, entry, stop)
+        qty = utils.risk_to_qty(self.balance, 2, entry, stop)
         self.sell = qty, entry
         self.stop_loss = qty, stop
 

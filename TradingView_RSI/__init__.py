@@ -27,7 +27,7 @@ class TradingView_RSI(Strategy):
 
 
     def should_long(self):
-        qty = utils.size_to_qty(self.capital, self.price, 3, fee_rate=self.fee_rate) 
+        qty = utils.size_to_qty(self.balance, self.price, 3, fee_rate=self.fee_rate) 
 
         if utils.crossed(self.rsi, 35, direction="above") and qty > 0 and self.available_margin > (qty * self.price):
             return True
@@ -40,7 +40,7 @@ class TradingView_RSI(Strategy):
 
 
     def go_long(self):
-        qty = utils.size_to_qty(self.capital, self.price, 3, fee_rate=self.fee_rate) 
+        qty = utils.size_to_qty(self.balance, self.price, 3, fee_rate=self.fee_rate) 
         self.buy = qty, self.price
         self.stop_loss = qty, (self.price * self.hp['stop_loss'])        # Willing to lose 5%
         self.take_profit = qty, (self.price * self.hp['take_profit'])     # Take profits at 10%

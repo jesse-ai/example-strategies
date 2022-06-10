@@ -58,7 +58,7 @@ class TurtleRules(Strategy):
         # In Original Turtle Rule book, the position sizing formula is defined as: 
         # Unit = 1% of Account / (N × Dollars per Point) where N is ATR(20)
         
-        return ((unit_risk_percent/100) * self.capital) / (self.atr * dollars_per_point)
+        return ((unit_risk_percent/100) * self.balance) / (self.atr * dollars_per_point)
 
     def entry_signal(self):
         # "The Turtles used two related system entries, each based on Donchian’s channel breakout system.
