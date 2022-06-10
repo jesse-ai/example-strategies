@@ -35,7 +35,7 @@ class Donchian(Strategy):
     def should_short(self) -> bool:
         return False
 
-    def should_cancel(self) -> bool:
+    def should_cancel_entry(self) -> bool:
         return True
 
     def go_long(self):

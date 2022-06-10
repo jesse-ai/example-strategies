@@ -28,7 +28,7 @@ class SMACrossover(Strategy):
         # Fast SMA below Slow SMA
         return self.fast_sma < self.slow_sma
 
-    def should_cancel(self) -> bool:
+    def should_cancel_entry(self) -> bool:
         return False
 
     def go_long(self):

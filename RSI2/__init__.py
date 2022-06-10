@@ -42,7 +42,7 @@ class RSI2(Strategy):
         # Enter long if current price is below sma(200) and RSI(2) is above oversold threshold
         return self.price < self.slow_sma and self.rsi >= self.vars["rsi_ob_threshold"]
 
-    def should_cancel(self) -> bool:
+    def should_cancel_entry(self) -> bool:
         return False
 
     def go_long(self):

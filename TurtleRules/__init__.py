@@ -98,7 +98,7 @@ class TurtleRules(Strategy):
     def should_short(self) -> bool:
         return self.entry_signal() == "entry_short"
 
-    def should_cancel(self) -> bool:
+    def should_cancel_entry(self) -> bool:
         pass
 
     def go_long(self):

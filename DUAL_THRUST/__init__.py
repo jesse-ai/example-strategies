@@ -32,7 +32,7 @@ class DUAL_THRUST(Strategy):
         if (self.is_long and self.short_cond) or (self.is_short and self.long_cond):
             self.liquidate()
 
-    def should_cancel(self) -> bool:
+    def should_cancel_entry(self) -> bool:
         return True
 
     ################################################################

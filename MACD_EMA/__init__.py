@@ -39,7 +39,7 @@ class MACD_EMA(Strategy):
     def should_short(self):
         return False
 
-    def should_cancel(self) -> bool:
+    def should_cancel_entry(self) -> bool:
         return True
         
 

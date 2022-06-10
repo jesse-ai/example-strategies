@@ -28,7 +28,7 @@ class MAGen(Strategy):
         self.stop_loss = qty, stop
         self.take_profit = qty, take_profit
 
-    def should_cancel(self) -> bool:
+    def should_cancel_entry(self) -> bool:
         return True
 
     def update_position(self):
