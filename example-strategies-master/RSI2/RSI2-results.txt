@@ -1,0 +1,34 @@
+loading candles...
+ CANDLES              |
+----------------------+--------------------------
+ period               |     366 days (1.0 years)
+ starting-ending date | 2019-06-01 => 2020-06-01
+
+
+ exchange   | symbol   | timeframe   | strategy   | DNA
+------------+----------+-------------+------------+-------
+ Binance    | BTCUSDT  | 3h          | RSI2       |
+
+
+Executed backtest simulation in:  15.3 seconds
+
+
+ METRICS                         |
+---------------------------------+----------------------------------------
+ Total Closed Trades             |                                    116
+ Total Net Profit                |                      -4330.43 (-43.3%)
+ Starting => Finishing Balance   |                       10000 => 5675.42
+ Total Open Trades               |                                      0
+ Open PL                         |                                      0
+ Total Paid Fees                 |                                1772.67
+ Max Drawdown                    |                                -50.11%
+ Annual Return                   |                                -32.22%
+ Expectancy                      |                        -37.33 (-0.37%)
+ Avg Win | Avg Loss              |                         86.89 | 248.22
+ Ratio Avg Win / Avg Loss        |                                   0.35
+ Percent Profitable              |                                    63%
+ Longs | Shorts                  |                              51% | 49%
+ Avg Holding Time                | 13.0 hours, 12.0 minutes, 55.0 seconds
+ Winning Trades Avg Holding Time |  8.0 hours, 35.0 minutes, 20.0 seconds
+ Losing Trades Avg Holding Time  |  21.0 hours, 4.0 minutes, 11.0 seconds
+ Sharpe Ratio                    |                                  -0.57
